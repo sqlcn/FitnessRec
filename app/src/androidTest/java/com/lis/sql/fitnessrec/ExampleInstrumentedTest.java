@@ -1,12 +1,14 @@
 package com.lis.sql.fitnessrec;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.InstrumentationRegistry.getContext;
 import static org.junit.Assert.*;
 
 /**
@@ -22,5 +24,12 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.lis.sql.fitnessrec", appContext.getPackageName());
+        System.out.println("Test Android");
+        FitnessDataBase mydb = new FitnessDataBase(appContext);
+//        mydb.creatDadaBase();
+//        mydb.getReadableDatabase();
+
+        SQLiteDatabase db = mydb.openDataBase();
+        System.out.println(db);
     }
 }
