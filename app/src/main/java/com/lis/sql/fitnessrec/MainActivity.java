@@ -1,6 +1,7 @@
 package com.lis.sql.fitnessrec;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -19,5 +20,10 @@ public class MainActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Intent intent = new Intent();
+        intent.setClass(this, SportsActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 }
